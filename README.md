@@ -1,6 +1,6 @@
 # Bad Apple!! - PyScript Web
 
-A browser-based, pure-Python implementation of the classic "Bad Apple!!" text animation. This project runs entirely on the client side without needing a backend server, utilizing **PyScript** and **WebAssembly (WASM)** to render and synchronize ASCII frames in real-time.
+A browser-based, pure-Python implementation of the classic "Bad Apple!!" touhou animation. This project runs entirely on the client side without needing a backend server, utilizing **PyScript** and **WebAssembly (WASM)** to render and synchronize ASCII frames in real-time.
 
 ## 🚀 Features
 
