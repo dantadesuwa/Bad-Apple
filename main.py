@@ -44,14 +44,13 @@ async def load_and_prep():
         # Trigger our smart scaling math immediately
         update_scaling()
 
-        status_text.innerHTML = "Data loaded.<br>Buffering audio..."
-        
-        while audio.readyState < 3:
-            await asyncio.sleep(0.1)
-
+        # --- THE FIX: REMOVE THE AUDIO BUFFERING LOOP ---
+        # Mobile browsers block buffering until a user clicks, 
+        # so we instantly show the start button instead!
         status_text.style.display = 'none'
         start_btn.innerText = "Click to Start"
         start_btn.classList.add("ready")
+        # ------------------------------------------------
         
     except Exception as e:
         status_text.innerHTML = f"<span style='color:red'>Error loading files:<br>{str(e)}</span>"
