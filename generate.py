@@ -15,7 +15,7 @@ def bake_video():
         return
 
     # Calculate dimensions
-    width = 150
+    width = 100
     orig_w = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
     orig_h = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
     height = int((width / orig_w) * orig_h * 0.5)
