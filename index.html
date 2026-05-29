@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bad Apple!! - PyScript Web</title>
+    
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+    <style>
+        body { 
+            background-color: black; 
+            color: white; 
+            margin: 0; 
+            overflow: hidden; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+        pre {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0; 
+            white-space: pre;
+            will-change: contents;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            user-select: none; 
+        }
+        #overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: black;
+            display: flex; justify-content: center; align-items: center; flex-direction: column;
+            z-index: 10;
+        }
+        #status-text {
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 0 20px;
+            line-height: 1.5;
+        }
+        #start-btn {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 24px;
+            border: 2px solid white; padding: 20px 40px;
+            text-transform: uppercase; transition: all 0.2s ease-in-out;
+            pointer-events: none; opacity: 0.5;
+        }
+        #start-btn.ready {
+            pointer-events: auto; opacity: 1; cursor: pointer;
+        }
+        #start-btn.ready:hover {
+            background-color: white; color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="bg-music" src="bad_apple.mp3" preload="auto"></audio>
+
+    <div id="overlay">
+        <div id="status-text">Booting Python Engine...<br><small>(If this takes longer than 15 seconds, check the developer console F12)</small></div>
+        <div id="start-btn">Please Wait</div>
+    </div>
+
+    <pre id="screen"></pre>
+    <script type="py" src="./main.py"></script>
+    
+</body>
+</html>
